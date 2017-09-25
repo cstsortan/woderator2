@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.KitListActivity"></activity>
+        <activity android:name=".Controller.KitListActivity" />
+        <activity android:name=".Controller.StopwatchActivity" />
+        <activity android:name=".Controller.WorkoutGeneratorActivity" />
+        <activity android:name=".Controller.BoxFinderActivity"></activity>
     </application>
 
 </manifest>
