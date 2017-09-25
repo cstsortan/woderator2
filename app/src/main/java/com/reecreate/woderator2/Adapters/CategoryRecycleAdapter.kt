@@ -45,7 +45,9 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
                     "drawable", context.packageName)
             categoryImage?.setImageResource(resourceId)
             categoryName?.text = category.title
-            itemView.setOnClickListener { itemClick(category) }
+            if (categoryImage != null) {
+                categoryImage.setOnClickListener { itemClick(category) }
+            }
 
 
         }
