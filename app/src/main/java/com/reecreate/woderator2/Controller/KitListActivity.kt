@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.reecreate.woderator2.Model.Category
 import com.reecreate.woderator2.R
+import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY
 import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY_IMAGE
 import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY_TITLE
 
@@ -14,9 +15,10 @@ class KitListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_kit_list)
 
         val intent = getIntent()
-        val categoryTitle = intent.getStringExtra(EXTRA_CATEGORY_TITLE)
-        val categoryImage = intent.getStringExtra(EXTRA_CATEGORY_IMAGE)
-        val category = Category(categoryTitle, categoryImage)
+//        val categoryTitle = intent.getStringExtra(EXTRA_CATEGORY_TITLE)
+//        val categoryImage = intent.getStringExtra(EXTRA_CATEGORY_IMAGE)
+//        val category = Category(categoryTitle, categoryImage)
+        val category = intent.getSerializableExtra(EXTRA_CATEGORY) as Category
 
         //and do whatever with the category
     }
