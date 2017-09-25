@@ -20,12 +20,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         adapter = CategoryRecycleAdapter(this, DataService.categories) { category ->
-            val kitListIntent = Intent(this, KitListActivity::class.java)
-            kitListIntent.putExtra(EXTRA_CATEGORY, category.title)
-            startActivity(kitListIntent)
 
+            startActivity(when (category) {
+                DataService.categories[0] -> Intent(this, KitListActivity::class.java)
+                DataService.categories[1] -> Intent(this, WorkoutGeneratorActivity::class.java)
+                DataService.categories[2] -> Intent(this, BoxFinderActivity::class.java)
+                else -> Intent(this, StopwatchActivity::class.java)
+
+
+            })
         }
-
 
 
         categoryListView.adapter = adapter
