@@ -46,8 +46,6 @@ class CategoryRecycleAdapter(val context: Context, val categories: List<Category
             categoryImage?.setImageResource(resourceId)
             categoryName?.text = category.title
             itemView.setOnClickListener { itemClick(category) }
-
-
         }
     }
 }

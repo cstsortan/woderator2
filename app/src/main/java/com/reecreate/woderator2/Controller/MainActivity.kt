@@ -9,7 +9,8 @@ import com.reecreate.woderator2.Adapters.CategoryAdapter
 import com.reecreate.woderator2.Adapters.CategoryRecycleAdapter
 import com.reecreate.woderator2.R
 import com.reecreate.woderator2.Services.DataService
-import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY
+import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY_IMAGE
+import com.reecreate.woderator2.Utilities.EXTRA_CATEGORY_TITLE
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         adapter = CategoryRecycleAdapter(this, DataService.categories) { category ->
             val kitListIntent = Intent(this, KitListActivity::class.java)
-            kitListIntent.putExtra(EXTRA_CATEGORY, category.title)
+            kitListIntent.putExtra(EXTRA_CATEGORY_TITLE, category.title)
+            kitListIntent.putExtra(EXTRA_CATEGORY_IMAGE, category.image)
             startActivity(kitListIntent)
 
         }
